@@ -18,20 +18,20 @@ const Navbar = () => {
 
   return (
     <>
-      <header className='flex justify-between sticky top-0 p-4 bg-white shadow-sm items-center'>
+      <header className='flex justify-between sticky top-0 p-4 bg-[#303132] text-white shadow-sm items-center'>
         <h2 className='cursor-pointer uppercase font-medium'>
-          <Link to="/"> Task Management Application </Link>
+          <Link to="/"> Task Management App </Link>
         </h2>
         <ul className='hidden md:flex gap-4 uppercase font-medium'>
           {authState.isLoggedIn ? (
             <>
-              <li className="bg-blue-500 text-white hover:bg-blue-600 font-medium rounded-md">
+              <li className="bg-primary text-white hover:bg-gray-800 font-medium rounded-md">
                 <Link to='/tasks/add' className='block w-full h-full px-4 py-2'> <i className="fa-solid fa-plus"></i> Add task </Link>
               </li>
-              <li className='py-2 px-3 cursor-pointer hover:bg-gray-200 transition rounded-sm' onClick={handleLogoutClick}>Logout</li>
+              <li className='py-2 px-3 cursor-pointer hover:bg-gray-200 hover:text-gray-900 transition rounded-sm' onClick={handleLogoutClick}>Logout</li>
             </>
           ) : (
-            <li className='py-2 px-3 cursor-pointer text-primary hover:bg-gray-100 transition rounded-sm'><Link to="/login">Login</Link></li>
+              <li className='py-2 px-3 cursor-pointer text-white hover:bg-gray-100 transition rounded-sm'><Link to="/login">Login</Link></li>
           )}
         </ul>
         <span className='md:hidden cursor-pointer' onClick={toggleNavbar}><i className="fa-solid fa-bars"></i></span>
@@ -51,7 +51,7 @@ const Navbar = () => {
                 <li className='py-2 px-3 cursor-pointer hover:bg-gray-200 transition rounded-sm' onClick={handleLogoutClick}>Logout</li>
               </>
             ) : (
-              <li className='py-2 px-3 cursor-pointer text-primary hover:bg-gray-200 transition rounded-sm'><Link to="/login">Login</Link></li>
+                <li className='py-2 px-3 cursor-pointer text-white hover:bg-gray-200 transition rounded-sm'><Link to="/login">Login</Link></li>
             )}
           </ul>
         </div>
